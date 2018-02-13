@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Valentine-day</title>
+        <link rel="stylesheet" href="stuff/template/rosepage.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style type="text/css">
+            .show{display:block;}
+            .hide{display:none;}
+            </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+           
+            <h1>Valentine-day<hr></h1>
+            <h3>To:first</h3>
+            <img id="Picture1" src="image/redrose2.jpg" class="show">   
+            <a href="Meet.html"><button class="button" id="bt-receive" onclick="hideimage()" value="Picture1">รับ</button></a>
+            <button data-text-swap="รับเท่านั้น 555+" id="bt-order">ไม่รับ</button>
+        </div>
+       
+        
+        <script  type="text/javascript">
+            var hit = 0;
+            $("button").on("click", function() {
+            var el = $(this);
+            if (el.text() == el.data("text-swap") && hit == 0) {
+            el.text(el.data("text-original"));
+            
+            } else {
+            el.data("text-original", el.text());
+            el.text(el.data("text-swap"));
+            hit = hit + 1 ;
+            }
+            });
+
+            function hideimage(){
+            var obj=document.getElementById('Picture1');
+            obj.className = 'show';
+            }
+        </script>
+    </body>
+
+</html>
